@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf8f4">
+  <meta name="description" content="دليل سمر يجمع القاعات في مكان واحد. اكتشف الصور، قارن السعة والمميزات، واحفظ الأماكن التي تناسب مناسبتك.">
+  <meta property="og:title" content="دليل سمر — مكان يليق بليلتك">
+  <meta property="og:description" content="تصفّح القاعات، شاهد التفاصيل، واختر مكان فرحتك على راحتك.">
+  <meta property="og:type" content="website">
+  <title>دليل سمر — مكان يليق بليلتك</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" as="image" href="assets/photos/hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=20261014-filters1">
+  <script>try{if(sessionStorage.getItem('daleel-samar-intro-v1')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('intro-seen')}catch(e){}setTimeout(function(){var l=document.getElementById('intro-loader');if(l){l.hidden=true;l.style.display='none'}document.querySelectorAll('[data-intro-inert]').forEach(function(el){el.inert=false;el.removeAttribute('data-intro-inert')})},3200);</script>
+<link rel="stylesheet" href="details.css?v=20261014-filters1"></head>
+<body>
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.2"/><path d="m16 16 4.4 4.4"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M20 12H4m7-7-7 7 7 7"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m1 5a5 5 0 0 1 3 4v2"/></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="2.5" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-compare" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16M5 7l3-3 3 3m2 10 3 3 3-3"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4Z"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#venues">انتقل إلى القاعات</a>
+
+<div id="intro-loader" class="intro-loader" aria-label="جارٍ تجهيز دليل سمر" role="status">
+  <div class="intro-content"><video id="intro-video" autoplay muted playsinline preload="auto" aria-hidden="true"><source src="assets/intro.mp4" type="video/mp4"></video><p>مكان فرحتك… أقرب</p><span class="loader-line"></span></div>
+  <button id="skip-intro" class="skip-intro" type="button">تخطّي المقدمة <svg><use href="#i-arrow"/></svg></button>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="دليل سمر — الرئيسية"><img src="assets/logo.webp" width="138" height="71" alt="دليل سمر"></a>
+    <nav class="desktop-links" aria-label="القائمة الرئيسية"><a href="#venues" class="current">اكتشف القاعات</a><a href="#how-it-works">كيف تختار؟</a><a href="#about">عن دليل سمر</a></nav>
+    <button id="favorites-toggle" class="header-favorite" type="button"><svg><use href="#i-heart"/></svg><span>قاعاتي المفضلة</span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <div class="eyebrow"><span></span> بداية الحكاية… مكان</div>
+      <h1 id="hero-title">لليلتك الحلوة،<br>مكان <em>يليق فيها.</em></h1>
+      <p class="hero-description">نجمع لك القاعات في مكان واحد.<br class="mobile-break"> شاهد، قارن، واختَر على راحتك.</p>
+      <a href="#venues" class="primary-button hero-cta">اكتشف قاعتك <svg><use href="#i-arrow"/></svg></a>
+      <div class="hero-footnote"><span class="tiny-hall"><svg><use href="#i-grid"/></svg></span><p><strong>١٧ قاعة</strong><span>خيارات مختلفة… لفرحة تشبهك</span></p></div>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-photo" src="assets/photos/hero.jpg" alt="صالة مناسبات بإضاءة دافئة وطاولات أنيقة" fetchpriority="high" width="1200" height="1200">
+      <div class="hero-image-shade"></div>
+      <span class="photo-label"><span></span> لفرحتك عنوان</span>
+      <div class="hero-photo-caption"><span>تفاصيل تصنع الذكرى</span><svg><use href="#i-spark"/></svg></div>
+      <div class="hero-floating"><svg><use href="#i-heart"/></svg><span>هنا تبدأ<br><strong>ليلتك الأجمل</strong></span></div>
+    </div>
+  </section>
+
+  <div class="container search-section">
+    <form id="search-form" class="search-form" role="search">
+      <div class="search-field"><svg><use href="#i-search"/></svg><div><label for="search-input">عن أي مكان تبحث؟</label><input id="search-input" type="search" placeholder="اسم القاعة أو الحي…" autocomplete="off"></div></div>
+      <div class="search-summary"><svg><use href="#i-pin"/></svg><span>كل الأحياء</span></div>
+      <button type="submit" class="search-button">ابحث عن قاعة <svg><use href="#i-arrow"/></svg></button>
+    </form>
+    <div class="search-note"><svg><use href="#i-check"/></svg> تصفّح الصور والتفاصيل، واحفظ خياراتك المفضلة</div>
+  </div>
+
+  <section id="venues" class="venues-section container" aria-labelledby="venues-title">
+    <div class="section-heading"><div><div class="eyebrow">مساحات لذكرياتك</div><h2 id="venues-title">قاعات تستحق تشوفها</h2></div><span class="collection-count">١٧ <span>قاعة في مكان واحد</span></span></div>
+    <div class="filter-toolbar">
+      <div class="zone-tabs" role="group" aria-label="تصفية حسب المنطقة"><button class="zone-chip active" data-zone="" type="button">كل القاعات</button><button class="zone-chip" data-zone="شمال المدينة" type="button">شمال المدينة</button><button class="zone-chip" data-zone="وسط المدينة" type="button">وسط المدينة</button><button class="zone-chip" data-zone="شرق المدينة" type="button">شرق المدينة</button><button class="zone-chip" data-zone="غرب المدينة" type="button">غرب المدينة</button></div>
+      <button class="filter-button" data-open-filters type="button"><svg><use href="#i-filter"/></svg><span>تصفية</span><span id="filter-count" class="filter-count" hidden>0</span></button>
+    </div>
+    <div class="results-toolbar"><p id="result-count" aria-live="polite">١٧ قاعة بانتظار مناسبتك</p><label class="sort-control"><span>الترتيب:</span><select id="sort-select" aria-label="ترتيب القاعات"><option value="recommended">الترتيب الافتراضي</option><option value="capacity-asc">السعة: الأقل أولًا</option><option value="capacity-desc">السعة: الأكبر أولًا</option></select><svg><use href="#i-chevron"/></svg></label></div>
+    <div id="venue-grid" class="venue-grid"></div>
+    <div id="empty-state" class="empty-state" hidden><svg><use href="#i-search"/></svg><h3 id="empty-title">خلّنا نوسّع الخيارات شوي</h3><p id="empty-copy">ما فيه قاعات تطابق بحثك حاليًا. جرّب حيًا آخر أو خفّف الفلاتر.</p><button type="button" id="empty-reset" data-reset-filters class="secondary-button">عرض كل القاعات</button></div>
+    <button type="button" id="load-more" class="load-more">شاهد قاعات أكثر <svg><use href="#i-arrow"/></svg></button>
+  </section>
+
+  <section id="how-it-works" class="how-section container" aria-labelledby="how-title">
+    <div class="how-intro"><div class="eyebrow">خذ وقتك في الاختيار</div><h2 id="how-title">مكانك المناسب،<br>بثلاث خطوات.</h2><p>من أول صورة تلفت انتباهك،<br>إلى القاعة اللي تحسّها لك.</p><svg class="how-spark"><use href="#i-spark"/></svg></div>
+    <div class="steps"><article class="step"><span class="step-number">٠١</span><div><h3>اكتشف الأماكن</h3><p>تصفّح القاعات حسب الحي وعدد ضيوفك، وشاهد صور كل مكان.</p></div><svg><use href="#i-search"/></svg></article><article class="step"><span class="step-number">٠٢</span><div><h3>قرّب الخيارات</h3><p>احفظ اللي أعجبك في المفضلة، وقارن حتى ثلاث قاعات جنبًا إلى جنب.</p></div><svg><use href="#i-compare"/></svg></article><article class="step"><span class="step-number">٠٣</span><div><h3>اختر على بيّنة</h3><p>راجع السعة والمرافق والتفاصيل، عشان تختار المكان الأنسب لمناسبتك.</p></div><svg><use href="#i-check"/></svg></article></div>
+  </section>
+
+  <section class="inspiration container"><div class="inspiration-image"><img src="assets/photos/venue-2.jpg" loading="lazy" width="1000" height="800" alt="طاولة مناسبة بتنسيق أنيق"></div><div class="inspiration-copy"><svg><use href="#i-spark"/></svg><p>بعض الأماكن تشوفها…<br><em>وبعضها تتخيّل فرحتك فيها.</em></p><a href="#venues">خلّنا نلقى مكانك <svg><use href="#i-arrow"/></svg></a></div></section>
+
+  <section class="faq-section container" aria-labelledby="faq-title"><div><div class="eyebrow">نساعدك تختار</div><h2 id="faq-title">قبل ما تختار قاعتك</h2><p>إجابات بسيطة لرحلة اختيار أسهل.</p></div><div class="faq-list"><details><summary>كيف أعرف القاعة المناسبة لعدد ضيوفي؟<span>+</span></summary><p>ابدأ بتحديد العدد التقريبي للضيوف، ثم استخدم فلتر السعة. تأكد لاحقًا من القاعة أن السعة تناسب توزيع الطاولات والمساحات المطلوبة لمناسبتك.</p></details><details><summary>أقدر أحفظ القاعات وأرجع لها؟<span>+</span></summary><p>نعم، اضغط القلب على أي قاعة. ستجدها في «المفضلة» على نفس الجهاز والمتصفح؛ لا تحتاج إلى إنشاء حساب.</p></details><details><summary>كيف أقارن بين القاعات؟<span>+</span></summary><p>اضغط «قارن» على قاعتين أو ثلاث، ثم افتح المقارنة لمشاهدة الحي والسعة والطابع والمرافق في مكان واحد.</p></details><details><summary>كيف أتواصل وأرتّب مناسبتي؟<span>+</span></summary><p>الموقع دليل لتصفّح القاعات والمقارنة بينها. للاستفسار والتنسيق والحجز، تواصل مع إدارة القاعة مباشرة عبر رقم الاتصال؛ لا توجد طلبات أو حجوزات أونلاين.</p></details></div></section>
+
+  <section id="about" class="about-strip container"><span class="about-mark">سمر</span><div><h2>فرحتك تستاهل بداية سهلة.</h2><p>دليل سمر يجمع لك الخيارات، ويترك لك متعة الاختيار.</p></div><a href="#venues" class="secondary-button">ابدأ اكتشافك <svg><use href="#i-arrow"/></svg></a></section>
+</main>
+
+<footer class="site-footer container"><div class="footer-top"><a class="brand" href="#" aria-label="دليل سمر"><img src="assets/logo.webp" loading="lazy" width="138" height="71" alt="دليل سمر"></a><p>كل القاعات. تفاصيل أوضح. اختيار أريح.</p><a href="#hero-title">العودة للأعلى ↑</a></div><div class="footer-bottom"><p>© <span id="year">٢٠٢٦</span> دليل سمر</p><span>صُنع لبداياتكم الحلوة</span></div></footer>
+
+<nav class="mobile-nav" aria-label="التنقل السريع"><button id="nav-home" class="nav-item active" type="button"><svg><use href="#i-grid"/></svg><span>الرئيسية</span></button><button id="nav-explore" class="nav-item" type="button"><svg><use href="#i-search"/></svg><span>القاعات</span></button><button id="nav-favorites" class="nav-item" type="button"><svg><use href="#i-heart"/></svg><span>المفضلة</span></button><button id="nav-compare" class="nav-item" type="button"><svg><use href="#i-compare"/></svg><span>المقارنة</span></button></nav>
+
+<div id="compare-bar" class="compare-bar" hidden><div><svg><use href="#i-compare"/></svg><span><strong id="compare-count">0</strong> قاعات للمقارنة</span></div><button id="compare-open" type="button">قارن الآن <svg><use href="#i-arrow"/></svg></button><button id="compare-clear" class="icon-button" type="button" aria-label="مسح المقارنة"><svg><use href="#i-close"/></svg></button></div>
+
+<dialog id="filter-dialog" class="filter-dialog" aria-labelledby="filter-title"><div class="dialog-header"><div><span class="eyebrow">مكان يناسبك</span><h2 id="filter-title">قرّب خياراتك</h2></div><button class="icon-button" data-close-dialog type="button" aria-label="إغلاق التصفية"><svg><use href="#i-close"/></svg></button></div><div class="filter-fields"><label for="filter-zone">المنطقة</label><select id="filter-zone"><option value="">كل المناطق</option><option>شمال المدينة</option><option>وسط المدينة</option><option>شرق المدينة</option><option>غرب المدينة</option></select><label for="filter-guests">عدد الضيوف</label><select id="filter-guests"><option value="">أي عدد</option><option value="200">٢٠٠ ضيف أو أكثر</option><option value="400">٤٠٠ ضيف أو أكثر</option><option value="600">٦٠٠ ضيف أو أكثر</option></select></div><div class="dialog-actions"><button id="apply-filters" type="button" class="primary-button">عرض القاعات <svg><use href="#i-arrow"/></svg></button><button id="reset-filters" type="button" class="text-button">مسح الفلاتر</button></div></dialog>
+
+<dialog id="detail-dialog" class="detail-dialog" aria-label="تفاصيل القاعة"><button class="icon-button detail-close" data-close-dialog type="button" aria-label="إغلاق تفاصيل القاعة"><svg><use href="#i-close"/></svg></button><div id="detail-content"></div></dialog>
+<dialog id="compare-dialog" class="compare-dialog" aria-labelledby="compare-title"><div class="dialog-header"><div><span class="eyebrow">كل التفاصيل قدامك</span><h2 id="compare-title">أيهما أقرب لفرحتك؟</h2></div><button class="icon-button" data-close-dialog type="button" aria-label="إغلاق المقارنة"><svg><use href="#i-close"/></svg></button></div><div id="compare-content"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><style>.intro-loader{display:none}</style><p class="noscript-note">فعّل جافاسكربت لعرض القاعات واستخدام البحث والمفضلة.</p></noscript>
+<script type="module" src="app.js?v=20261014-filters1"></script>
+</body>
+</html>
