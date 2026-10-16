@@ -1,50 +1,138 @@
-export const roomPhotos = [
-  {name:'الواجهة الخارجية',src:'assets/hall-1/photo-4.webp'},
-  {name:'مبنى القاعة والمواقف',src:'assets/hall-1/photo-6.webp',position:'35% 50%'},
-  {name:'صالة القاعة',src:'assets/hall-1/photo-1.webp'},
-  {name:'الشاشة والجلسات',src:'assets/hall-1/photo-2.webp'},
-  {name:'مدخل القاعة',src:'assets/hall-1/photo-3.webp'},
-  {name:'صالة الطعام',src:'assets/hall-1/photo-5.webp'},
-];
+const arabicNumber = new Intl.NumberFormat('ar-SA');
+const sectionIcons = {
+  'hall-information': 'spark',
+  'hall-capacity': 'hall',
+  'hall-dining': 'hall',
+  'hall-spaces': 'spark',
+  'hall-access': 'pin',
+};
 
-export function renderHallDetails(hall){
-  const n=value=>new Intl.NumberFormat('ar-SA').format(value);
-  const icon=name=>`<svg aria-hidden="true"><use href="#h-${name}"/></svg>`;
-  const header=(title,subtitle='',id='')=>`<div class="hall-section-title">${icon('hall')}<h2${id?` id="${id}"`:''}>${title}</h2></div>${subtitle?`<p class="hall-section-description">${subtitle}</p>`:''}`;
-  const roomHTML=roomPhotos.map((room,i)=>`<button type="button" class="hall-room-card" data-photo="${i}" aria-label="عرض ${room.name}"><span class="hall-room-image"><img src="${room.src}" alt="${room.name} — القاعة الأولى" loading="lazy" width="600" height="400"></span><span class="hall-room-caption"><strong>${room.name}</strong>${icon('image')}</span></button>`).join('');
-  const old=document.querySelector('.hall-space-section');
-  old.outerHTML=`<div class="hall-demo-content">
-    <section id="hall-capacity" class="hall-content-section hall-capacity-section">
-      ${header('مساحة لكل أحبابك','تعرّف على سعة الصالات وتوزيع الضيوف.')}
-      <div class="hall-total-capacity"><span>${icon('hall')}<span>إجمالي سعة القاعة<small>قسمان منفصلان للرجال والنساء</small></span></span><strong>${n(hall.capacity)}<small>ضيف</small></strong></div>
-      <div class="hall-capacity-grid"><article><span class="hall-capacity-label">قسم الرجال</span><strong>${n(hall.menCapacity)}</strong><span class="hall-capacity-unit">ضيف في صالة الرجال</span><div><span>صالة الطعام</span><b>${n(hall.diningMenCapacity)} شخص</b></div></article><article><span class="hall-capacity-label">قسم النساء</span><strong>${n(hall.womenCapacity)}</strong><span class="hall-capacity-unit">ضيفة في صالة النساء</span><div><span>صالة الطعام</span><b>${n(hall.diningWomenCapacity)} شخص</b></div></article></div>
-      <p class="hall-capacity-foot">الجلسات موزعة على ١٠٠ طاولة و١٬٠٠٠ كرسي.</p>
-    </section>
-    <section id="hall-rooms" class="hall-content-section">
-      ${header('جولة في القاعة','شاهد الصالة والجلسات والمدخل والواجهة الخارجية.')}
-      <div class="hall-rooms-grid">${roomHTML}</div>
-    </section>
-    <section id="hall-access" class="hall-content-section">
-      ${header('من الوصول… للترحيب','مداخل مستقلة ومساحات منظمة لضيوف مناسبتك.')}
-      <div class="hall-parking-stat"><div class="hall-parking-icon">${icon('pin')}</div><div><strong>${n(hall.parking)} <span>موقف سيارة</span></strong><p>مواقف خاصة بالقاعة • خدمة صف السيارات حسب الطلب</p></div></div>
-      <h3 class="hall-detail-subtitle">المداخل والخصوصية</h3><div class="hall-entry-grid"><div>${icon('check')}<span>مدخل رجال مستقل</span></div><div>${icon('check')}<span>مدخل نساء مستقل</span></div><div>${icon('check')}<span>مدخل خاص للعروس</span></div></div>
-      <h3 class="hall-detail-subtitle">سهولة الوصول</h3><div class="hall-amenity-pills"><span>مصعد</span><span>منحدرات للكراسي المتحركة</span><span>دورات مياه مهيأة</span><span>لوحات إرشادية</span></div>
-    </section>
-    <section id="hall-amenities" class="hall-content-section">
-      ${header('تجهيزات تكمل الليلة','تفاصيل المساحات والتجهيزات المتوفرة لمناسبتك.')}
-      <div class="hall-equipment-grid">${[
-        ['كوشة ومسرح','منصة رئيسية لتفاصيل مناسبتك'],['إضاءة ديكورية','إضاءة عامة وإضاءة للمسرح'],['صوتيات وشاشات','نظام صوت وشاشتا عرض'],['غرفة عروس','غرفة تجهيز بدورة مياه خاصة'],['الطاولات والكراسي','١٠٠ طاولة • ١٬٠٠٠ كرسي'],['دورات المياه','١٠ دورات مياه موزعة على القسمين'],['جلسات خارجية','مساحة للاستقبال والجلسات'],['تكييف مركزي','يشمل الصالات ومساحات الضيافة']
-      ].map(([title,desc])=>`<div>${icon('check')}<span><strong>${title}</strong><small>${desc}</small></span></div>`).join('')}</div>
-    </section>
-    <section id="hall-services" class="hall-content-section">
-      ${header('ضيافة تليق بضيوفك','جميع خدمات الضيافة والتنظيم متوفرة حسب الطلب.')}
-      <div class="hall-service-list">${[
-        ['ضيافة القهوة والشاي','حسب الطلب'],['مشرف ومشرفات للقاعة','حسب الطلب'],['تنظيم واستقبال الضيوف','حسب الطلب'],['تنظيف وتجهيز المساحات','حسب الطلب'],['خدمة تقديم الطعام','حسب الطلب'],['خدمة صف السيارات','حسب الطلب']
-      ].map(([title,status])=>`<div><span>${icon('check')}${title}</span><small class="${status==='حسب الطلب'?'optional':''}">${status}</small></div>`).join('')}</div>
-    </section>
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[character]));
+}
+
+function isMissing(value) {
+  return value === null || value === undefined ||
+    (typeof value === 'string' && (!value.trim() || value.trim().toLowerCase() === 'undefined')) ||
+    (typeof value === 'number' && !Number.isFinite(value));
+}
+
+function displayValue(value) {
+  if (isMissing(value)) return '—';
+  if (value === true) return 'نعم';
+  if (value === false) return 'لا';
+  if (typeof value === 'number') return arabicNumber.format(value);
+  return typeof value === 'string' ? value.trim() : '—';
+}
+
+function icon(name, className = '') {
+  return `<svg${className ? ` class="${className}"` : ''} aria-hidden="true"><use href="#h-${name}"/></svg>`;
+}
+
+function safeHTTPURL(value) {
+  if (typeof value !== 'string' || !/^https?:\/\//i.test(value.trim())) return '';
+  try {
+    const url = new URL(value.trim());
+    return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password ? url.href : '';
+  } catch { return ''; }
+}
+
+function phoneNumber(value) {
+  if (isMissing(value) || typeof value === 'boolean') return '';
+  const normalized = String(value).trim()
+    .replace(/[٠-٩]/g, digit => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))
+    .replace(/[۰-۹]/g, digit => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit)))
+    .replace(/[\s()-]/g, '');
+  return /^\+?\d{7,15}$/.test(normalized) ? normalized : '';
+}
+
+function safePosition(value) {
+  const position = typeof value === 'string' ? value.trim() : '';
+  return /^(?:(?:left|right|center|top|bottom|-?\d+(?:\.\d+)?%?)\s*){1,2}$/.test(position) ? position : 'center';
+}
+
+function renderFieldValue(field) {
+  if (field.key === 'mapsUrl') {
+    const url = safeHTTPURL(field.value);
+    return url ? `<a class="hc-field-link" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">عرض الموقع<span aria-hidden="true">↗</span></a>` : '—';
+  }
+  if (field.key === 'phone') {
+    const phone = phoneNumber(field.value);
+    if (phone) return `<a class="hc-field-link hc-phone-link" href="tel:${phone}" dir="ltr">${escapeHTML(String(field.value).trim())}</a>`;
+  }
+  if (field.key === 'whatsapp') {
+    const phone = phoneNumber(field.value);
+    const url = safeHTTPURL(field.value) || (phone && /^\+?[1-9]\d{9,14}$/.test(phone) ? `https://wa.me/${phone.replace(/^\+/, '')}` : '');
+    if (url) return `<a class="hc-field-link" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">واتساب<span aria-hidden="true">↗</span></a>`;
+  }
+  return escapeHTML(displayValue(field.value));
+}
+
+function renderFields(fields) {
+  return `<dl class="hc-fields">${fields.map(field => {
+    const value = renderFieldValue(field);
+    const empty = value === '—';
+    const wide = !empty && !value.includes('<a ') && displayValue(field.value).length > 38;
+    return `<div class="hc-field${wide ? ' hc-field--wide' : ''}">
+      <dt>${escapeHTML(field.label || '')}</dt>
+      <dd${empty ? ' class="hc-value-empty" aria-label="غير محدد"' : ''}>${value}</dd>
+    </div>`;
+  }).join('')}</dl>`;
+}
+
+function renderGallery(group, album, hallName) {
+  const photos = Array.isArray(group.photos) ? group.photos : [];
+  const matchedPhotos = photos.map(photo => ({
+    ...photo,
+    albumIndex: album.findIndex(item => item.src === photo.src),
+  })).filter(photo => typeof photo.src === 'string' && photo.src && photo.albumIndex >= 0);
+
+  if (!matchedPhotos.length) {
+    return `<div class="hc-gallery-empty" role="img" aria-label="مساحة صور ${escapeHTML(group.title || '')}">
+      <span class="hc-empty-image">${icon('image')}</span>
+      <span class="hc-empty-decoration" aria-hidden="true"></span>
+    </div>`;
+  }
+
+  return `<div class="hc-group-gallery${matchedPhotos.length === 1 ? ' hc-group-gallery--single' : ''}" aria-label="صور ${escapeHTML(group.title || '')}">
+    ${matchedPhotos.map(photo => {
+      const name = photo.name || group.title || 'القاعة';
+      return `<button type="button" class="hc-photo" data-photo="${photo.albumIndex}" aria-label="تكبير ${escapeHTML(name)}">
+        <span class="hc-photo-frame"><img src="${escapeHTML(photo.src)}" alt="${escapeHTML(name)} — ${escapeHTML(hallName)}" loading="lazy" decoding="async" width="800" height="500" style="object-position:${safePosition(photo.position)}"></span>
+        <span class="hc-photo-caption"><span>${escapeHTML(name)}</span>${icon('image')}</span>
+      </button>`;
+    }).join('')}
   </div>`;
-  const nav=document.querySelector('.hall-section-nav');
-  nav.innerHTML='<a href="#hall-capacity" class="active">السعة</a><a href="#hall-rooms">صور الأقسام</a><a href="#hall-access">المواقف</a><a href="#hall-amenities">المرافق</a><a href="#hall-services">الخدمات</a><a href="#hall-location">الموقع</a>';
-  const quick=document.createElement('button');quick.type='button';quick.className='hall-compare-button hall-inline-compare';quick.dataset.compareHall='';quick.setAttribute('aria-pressed','false');quick.innerHTML=`${icon('compare')}<span>أضف للمقارنة</span>`;document.querySelector('.hall-tags').append(quick);
-  document.querySelector('#compare-hall').dataset.compareHall='';
+}
+
+/** Render content only. Navigation, page chrome and gallery behavior belong to hall.js. */
+export function renderHallDetails(hall) {
+  const root = document.querySelector('#hall-details-root');
+  if (!root) return;
+
+  const sections = Array.isArray(hall?.content) ? hall.content : [];
+  const album = Array.isArray(hall?.album) ? hall.album : [];
+  const hallName = hall?.name || 'القاعة';
+
+  root.classList.add('hall-details-content');
+  root.innerHTML = sections.map((section, sectionIndex) => {
+    const groups = Array.isArray(section.groups) ? section.groups : [];
+    const sectionNumber = arabicNumber.format(sectionIndex + 1).padStart(2, '٠');
+    return `<section id="${escapeHTML(section.id)}" class="hc-section" aria-labelledby="${escapeHTML(section.id)}-heading">
+      <header class="hc-section-header">
+        <span class="hc-section-mark">${icon(sectionIcons[section.id] || 'hall')}</span>
+        <h2 id="${escapeHTML(section.id)}-heading">${escapeHTML(section.title || '')}</h2>
+        <span class="hc-section-number" aria-hidden="true">${sectionNumber}</span>
+      </header>
+      <div class="hc-groups">
+        ${groups.map(group => `<article class="hc-group${groups.length === 1 ? ' hc-group--only' : ''}"${group.id ? ` id="${escapeHTML(group.id)}"` : ''}>
+          <div class="hc-group-heading"><h3>${escapeHTML(group.title || '')}</h3><span aria-hidden="true"></span></div>
+          ${renderFields(Array.isArray(group.fields) ? group.fields : [])}
+          ${group.showPhotos === false ? '' : renderGallery(group, album, hallName)}
+        </article>`).join('')}
+      </div>
+    </section>`;
+  }).join('');
 }
